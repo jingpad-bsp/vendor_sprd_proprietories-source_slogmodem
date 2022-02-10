@@ -1,0 +1,8 @@
+service slogmodem /system/bin/slogmodem
+    class main
+    user root
+    group system sdcard_rw media_rw audio radio
+    writepid /dev/cpuset/system-background/tasks
+
+on post-fs-data
+    mkdir /data/local/slogmodem 0777 system system
